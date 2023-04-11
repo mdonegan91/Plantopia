@@ -10,13 +10,21 @@ describe('plant functions', () => {
     });
   });
 
-describe('feed', () => {
-
-  test("Should increase soil level by 1", () => {
-    let soil = 0;
-    soil = plant.feed(2);
-    expect(soil).toEqual({"soil": 1});
+  describe('changeState', () => {
+    test('should create a function that returns a new state object with the specified property changed by the specified value', () => {
+      const state = { soil: 1 };
+      const newState = plant.changeState('soil')(2)(state);
+      expect(newState).toEqual({ soil: 3 });
+    });
   });
-});
+
+  describe('feed', () => {
+
+    test("Should increase soil level by 1", () => {
+      let soil = 0;
+      soil = plant.feed(2);
+      expect(soil).toEqual({ "soil": 1 });
+    });
+  });
 
 });
