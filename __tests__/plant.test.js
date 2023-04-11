@@ -74,3 +74,31 @@ describe('plant functions', () => {
   });
 
 });
+
+describe('plant methods', () => {
+
+  describe('canBloom', () => {
+    test('should return a method that returns the color the plant is blooming with', () => {
+      const myPlant = { name: 'my plant' };
+      const bloomingMethod = plant.canBloom(myPlant);
+      expect(bloomingMethod.color('red')).toEqual('my plant is blooming with red color.');
+    });
+  });
+
+  describe('canCreateShade', () => {
+    test('should return a method that returns the size of the shade the plant is creating', () => {
+      const myPlant = { name: 'my plant' };
+      const creatingShadeMethod = plant.canCreateShade(myPlant);
+      expect(creatingShadeMethod.shadeSize('large')).toEqual('my plant is creating a shade that is large.');
+    });
+  });
+
+  describe('canHeal', () => {
+    test('should return a method that returns the type of wound the plant can heal', () => {
+      const myPlant = { name: 'my plant' };
+      const healingMethod = plant.canHeal(myPlant);
+      expect(healingMethod.healingCapabilities('cuts')).toEqual('my plant ican heal cuts.');
+    });
+  });
+
+});
