@@ -27,6 +27,22 @@ describe('plant functions', () => {
     });
   });
 
+  describe('palm', () => {
+    test('should create a palm with the specified name and the canCreateShade method', () => {
+      const myPalm = plant.palm('my palm');
+      expect(myPalm.name).toEqual('my palm');
+      expect(myPalm.shadeSize('medium')).toEqual('my palm is creating a shade that is medium.');
+    });
+  });
+
+  describe('aloe', () => {
+    test('should create an aloe with the specified name and the canHeal method', () => {
+      const myAloe = plant.aloe('my aloe');
+      expect(myAloe.name).toEqual('my aloe');
+      expect(myAloe.healingCapabilities('cuts')).toEqual('my aloe ican heal cuts.');
+    });
+  });
+
   describe('feed', () => {
 
     test("Should increase soil level by 1", () => {
