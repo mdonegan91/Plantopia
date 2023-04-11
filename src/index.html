@@ -1,16 +1,111 @@
 <html>
-  <head>
-    <script type="text/javascript" src="plant.js"></script>
-    <title>Grow Your Plant</title>
-  </head>
-  <body>
-    <button id="feed">Add a lot of soil</button>
-    <button id="feedLittle">Add little soil</button>
-    <button id="hydrate">Add water</button>
-    <button id="superWater">Add plenty of water</button>
-    <button id="show-state">Current Stats</button>
-    <h1>Your Plant's Values</h1>
-    <h3><div id="soil-value">feed me</div></h3>
-    <h3><div id="water-value">water please</div></h3>
-  </body>
+
+<head>
+  <script type="text/javascript" src="plant.js"></script>
+  <title>Grow Your Plant</title>
+</head>
+
+<body>
+  <div id="plantDisplay">
+    <h3 class="display-4">My Plants!</h3>
+    <div class="card-container">
+      <!-- Orchid -->
+      <div class="card shadow p-4">
+        <div class="orchid">
+          <h5>Olivia the Orchid</h5>
+          <br>
+          <button class="btn btn-success" id="feed-orchid">Add Soil</button>
+          <button class="btn btn-success" id="water-orchid">Add Water</button>
+          <button class=" btn btn-success" id="light-orchid">Add Light</button>
+          <br>
+          <br>
+          <!-- <button id="show-state-orchid">Current Stats</button> -->
+          <!-- <h1>Your Plant's Values</h1> -->
+          <h3>
+            <div id="soil-value-orchid">feed me</div>
+          </h3>
+          <h3>
+            <div id="water-value-orchid">water please</div>
+          </h3>
+          <h3>
+            <div id="light-value-orchid">sun!</div>
+          </h3>
+          <h3>
+            <div id="blooming-orchid"></div>
+          </h3>
+          <h3>
+            <div id="shading-orchid"></div>
+          </h3>
+        </div>
+      </div>
+      <!-- Palm -->
+      <div class="card shadow p-4">
+        <div class="palm">
+          <h5>Petrie the Palm</h5>
+          <br>
+          <button class="btn btn-success" id="feed-palm">Add Soil</button>
+          <button class="btn btn-success" id="water-palm">Add Water</button>
+          <button class=" btn btn-success" id="light-palm">Add Light</button>
+          <br>
+          <br>
+          <h3>
+            <div id="soil-value-palm">feed me</div>
+          </h3>
+          <h3>
+            <div id="water-value-palm">water please</div>
+          </h3>
+          <h3>
+            <div id="light-value-palm">sun!</div>
+          </h3>
+          <h3>
+            <div id="shading-palm"></div>
+          </h3>
+        </div>
+      </div>
+      <!-- Aloe -->
+      <div class="card shadow p-4">
+        <div class="aloe">
+          <h5>Avery the Aloe</h5>
+          <br>
+          <button class="btn btn-success" id="feed-aloe">Add Soil</button>
+          <button class="btn btn-success" id="water-aloe">Add Water</button>
+          <button class=" btn btn-success" id="light-aloe">Add Light</button>
+          <br>
+          <br>
+          <h3>
+            <div id="soil-value-aloe">feed me</div>
+          </h3>
+          <h3>
+            <div id="water-value-aloe">water please</div>
+          </h3>
+          <h3>
+            <div id="light-value-aloe">sun!</div>
+          </h3>
+          <h3>
+            <div id="healing-aloe"></div>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<div class="hidden">
+  <button id="feed">Add a lot of soil</button>
+  <button id="feedLittle">Add little soil</button>
+  <button id="hydrate">Add water</button>
+  <button id="superWater">Add plenty of water</button>
+  <button id="show-state">Current Stats</button>
+  <h1>Your Plant's Values</h1>
+  <h3>
+    <div id="soil-value">feed me</div>
+  </h3>
+  <h3>
+    <div id="water-value">water please</div>
+  </h3>
+</div>
+</body>
+
 </html>

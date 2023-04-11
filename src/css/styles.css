@@ -1,3 +1,24 @@
 body {
-  background-color: cornflowerblue;
+  background-color: rgb(218, 232, 193);
+  margin: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+.card {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  width: 30%;
 }
