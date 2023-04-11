@@ -45,6 +45,7 @@ window.onload = function() {
   //   document.getElementById('water-value').innerText = `Water: ${newState.water}`;
   // };
 
+
   document.getElementById('feed-orchid').onclick = function() {
     const newState = plant.stateControlOrchid(plant.feed);
     document.getElementById('soil-value-orchid').innerText = `Soil: ${newState.soil}`;
@@ -59,6 +60,7 @@ window.onload = function() {
     const newState = plant.stateControlOrchid(plant.light);
     document.getElementById('light-value-orchid').innerText = `Light: ${newState.light}`;
   };
+
 
   document.getElementById('feed-palm').onclick = function() {
     const newState1 = plant.stateControlPalm(plant.feed);
