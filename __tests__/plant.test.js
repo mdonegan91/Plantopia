@@ -44,11 +44,32 @@ describe('plant functions', () => {
   });
 
   describe('feed', () => {
+    test('should increase soil level by 1', () => {
+      const newState = plant.stateControl(plant.feed);
+      expect(newState.soil).toEqual(1);
+    });
+  });
 
-    test("Should increase soil level by 1", () => {
-      let soil = 0;
-      soil = plant.feed(2);
-      expect(soil).toEqual({ "soil": 1 });
+  describe('blueFood', () => {
+    test('should increase soil level by 5', () => {
+      const state = { soil: 0 };
+      const newState = plant.blueFood(state);
+      expect(newState).toEqual({ soil: 5 });
+    });
+  });  
+
+  describe('hydrate', () => {
+    test('should increase water level by 1', () => {
+      const newState = plant.stateControl(plant.hydrate);
+      expect(newState.water).toEqual(1);
+    });
+  });
+
+  describe('superWater', () => {
+    test('should increase water level by 5', () => {
+      const state = { water: 0 };
+      const newState = plant.superWater(state);
+      expect(newState).toEqual({ water: 5 });
     });
   });
 
