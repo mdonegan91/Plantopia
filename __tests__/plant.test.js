@@ -18,6 +18,15 @@ describe('plant functions', () => {
     });
   });
 
+  describe('orchid', () => {
+    test('should create an orchid with the specified name and the canBloom and canCreateShade methods', () => {
+      const myOrchid = plant.orchid('my orchid');
+      expect(myOrchid.name).toEqual('my orchid');
+      expect(myOrchid.color('pink')).toEqual('my orchid is blooming with pink color.');
+      expect(myOrchid.shadeSize('large')).toEqual('my orchid is creating a shade that is large.');
+    });
+  });
+
   describe('feed', () => {
 
     test("Should increase soil level by 1", () => {
