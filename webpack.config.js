@@ -19,7 +19,7 @@ module.exports = {
       verbose: true
     }),
     new HtmlWebpackPlugin({
-      title: 'JavaScript Template',
+      title: 'Plantopia',
       template: './src/index.html',
       inject: 'body'
     })

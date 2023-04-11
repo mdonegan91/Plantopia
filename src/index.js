@@ -1,39 +1,45 @@
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
-import Triangle from "./js/triangle.js";
-import Rectangle from "./js/rectangle.js";
+import * as plant from './js/plant.js';
 
-function handleTriangleForm(event) {
-  event.preventDefault();
-  document.querySelector("#response").innerText = null;
-  const length1 = parseInt(document.querySelector("#length1").value);
-  const length2 = parseInt(document.querySelector("#length2").value);
-  const length3 = parseInt(document.querySelector("#length3").value);
-  const triangle = new Triangle(length1, length2, length3);
-  const response = triangle.checkType();
-  const pTag = document.createElement("p");
-  pTag.append(`Your result is: ${response}.`);
-  document.querySelector("#response").append(pTag);
-}
 
-function handleRectangleForm(event) {
-  event.preventDefault();
-  document.querySelector("#response2").innerText = null;
-  const length1 = parseInt(document.querySelector("#rect-length1").value);
-  const length2 = parseInt(document.querySelector("#rect-length2").value);
-  const rectangle = new Rectangle(length1, length2);
-  const response = rectangle.getArea();
-  const pTag = document.createElement("p");
-  pTag.append(`The area of the rectangle is ${response}.`);
-  document.querySelector("#response2").append(pTag);
-}
+//User Interface Logic
+window.onload = function() {
 
-window.addEventListener("load", function () {
-  document
-    .querySelector("#triangle-checker-form")
-    .addEventListener("submit", handleTriangleForm);
-  document
-    .querySelector("#rectangle-area-form")
-    .addEventListener("submit", handleRectangleForm);
-});
+  // This function has side effects because we are manipulating the DOM.
+  // Manipulating the DOM will always be a side effect. 
+  // Note that we only use one of our functions to alter soil. 
+  // You can easily add more.
+  document.getElementById('feed').onclick = function() {
+    const newState = plant.stateControl(plant.blueFood);
+    document.getElementById('soil-value').innerText = `Soil: ${newState.soil}`;
+  };
+
+  document.getElementById('feedLittle').onclick = function() {
+    const newState = plant.stateControl(plant.feed);
+    document.getElementById('soil-value').innerText = `Soil: ${newState.soil}`;
+  };
+
+  document.getElementById('hydrate').onclick = function() {
+    const newState = plant.stateControl(plant.hydrate);
+    document.getElementById('water-value').innerText = `Water: ${newState.water}`;
+  };
+  document.getElementById('superWater').onclick = function() {
+    const newState = plant.stateControl(plant.superWater);
+    document.getElementById('water-value').innerText = `Water: ${newState.water}`;
+  };
+
+  // This function doesn't actually do anything useful in this application 
+  // — it just demonstrates how we can "look" at the current state 
+  // (which the DOM is holding anyway). 
+  // However, students often do need the ability to see the current state 
+  // without changing it so it's included here for reference.
+  document.getElementById('show-state').onclick = function() {
+    // We just need to call stateControl() without arguments 
+    // to see our current state.
+    const currentState = plant.stateControl();
+    document.getElementById('soil-value').innerText = `Soil: ${currentState.soil}`;
+    document.getElementById('water-value').innerText = `Water: ${currentState.water}`;
+  };
+};
