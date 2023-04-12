@@ -7,11 +7,14 @@
 
 <body>
   <div id="plantDisplay">
-    <h3 class="display-4">My Plants!</h3>
+    <h3 class="display-4">Plantopia!</h3>
     <div class="card-container">
       <!-- Orchid -->
       <div class="card shadow p-4">
         <div class="orchid">
+          <img src="assets/images/orchid.png" alt="pixelated orchid" width="200" height="200">
+          <br>
+          <br>
           <h5>Olivia the Orchid</h5>
           <br>
           <button class="btn btn-success" id="feed-orchid">Add Soil</button>
@@ -19,16 +22,14 @@
           <button class=" btn btn-success" id="light-orchid">Add Light</button>
           <br>
           <br>
-          <!-- <button id="show-state-orchid">Current Stats</button> -->
-          <!-- <h1>Your Plant's Values</h1> -->
           <h3>
-            <div id="soil-value-orchid">feed me</div>
+            <div id="soil-value-orchid"></div>
           </h3>
           <h3>
-            <div id="water-value-orchid">water please</div>
+            <div id="water-value-orchid"></div>
           </h3>
           <h3>
-            <div id="light-value-orchid">sun!</div>
+            <div id="light-value-orchid"></div>
           </h3>
           <h3>
             <div id="blooming-orchid"></div>
@@ -41,6 +42,9 @@
       <!-- Palm -->
       <div class="card shadow p-4">
         <div class="palm">
+          <img src="assets/images/palm.png" alt="pixelated orchid" height="200">
+          <br>
+          <br>
           <h5>Petrie the Palm</h5>
           <br>
           <button class="btn btn-success" id="feed-palm">Add Soil</button>
@@ -49,13 +53,13 @@
           <br>
           <br>
           <h3>
-            <div id="soil-value-palm">feed me</div>
+            <div id="soil-value-palm"></div>
           </h3>
           <h3>
-            <div id="water-value-palm">water please</div>
+            <div id="water-value-palm"></div>
           </h3>
           <h3>
-            <div id="light-value-palm">sun!</div>
+            <div id="light-value-palm"></div>
           </h3>
           <h3>
             <div id="shading-palm"></div>
@@ -65,6 +69,9 @@
       <!-- Aloe -->
       <div class="card shadow p-4">
         <div class="aloe">
+          <img src="assets/images/aloe.png" alt="pixelated orchid" height="200">
+          <br>
+          <br>
           <h5>Avery the Aloe</h5>
           <br>
           <button class="btn btn-success" id="feed-aloe">Add Soil</button>
@@ -73,13 +80,13 @@
           <br>
           <br>
           <h3>
-            <div id="soil-value-aloe">feed me</div>
+            <div id="soil-value-aloe"></div>
           </h3>
           <h3>
-            <div id="water-value-aloe">water please</div>
+            <div id="water-value-aloe"></div>
           </h3>
           <h3>
-            <div id="light-value-aloe">sun!</div>
+            <div id="light-value-aloe"></div>
           </h3>
           <h3>
             <div id="healing-aloe"></div>
@@ -100,11 +107,26 @@
   <button id="show-state">Current Stats</button>
   <h1>Your Plant's Values</h1>
   <h3>
-    <div id="soil-value">feed me</div>
+    <div id="soil-value"></div>
   </h3>
   <h3>
-    <div id="water-value">water please</div>
+    <div id="water-value"></div>
   </h3>
+</div>
+
+<div class="card shadow p-4 mx-auto">
+  <div class="disaster">
+    <h5>Disaster mode</h5>
+    <br>
+    <button class="btn btn-danger" id="wind">High winds</button>
+    <button class="btn btn-danger" id="drought">Drought</button>
+    <button class=" btn btn-danger" id="freeze">Freeze</button>
+    <br>
+    <br>
+      <!-- <h3>High winds: strips soil of 5 points from all plants</h3>
+      <h3>Drought: strips water of 5 points from all plants</h3>
+      <h3>Freeze: strips light of 5 points from all plants</h3> -->
+  </div>
 </div>
 </body>
 

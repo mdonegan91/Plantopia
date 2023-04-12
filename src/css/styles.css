@@ -1,6 +1,6 @@
 body {
   background-color: rgb(218, 232, 193);
-  margin: 20px;
+  margin: 30px;
 }
 
 .hidden {
@@ -11,14 +11,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 30px;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .card {
-  margin: 0;
-  padding: 0;
+  width: calc(33.33% - 1rem);
+  background-color: rgb(178, 209, 198);
 }
 
-.card {
-  width: 30%;
+.disaster{ 
+  text-align: center;
 }

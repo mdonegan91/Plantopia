@@ -1,0 +1,18 @@
+Orchid - (blooms, creates shade) poison?
+Palm - (creates shade) can withstand hurricanes
+Aloe - (heals cuts) heals other plants?
+
+poison?
+shade
+blooms
+heals
+
+feed
+blueFood
+hydrate
+superWater
+light
+
+chaos button:
+drought
+clouds
