@@ -13,8 +13,6 @@ const shadingPalm = plant.canCreateShade(petrie);
 let avery = plant.aloe("Avery");
 const healing = plant.canHeal(avery);
 
-
-
 //User Interface Logic
 window.onload = function() {
 
@@ -22,7 +20,6 @@ window.onload = function() {
     const newState = plant.stateControlOrchid(plant.feed);
     newState.soil = newState.soil - 5 * counterWind;
     document.getElementById('soil-value-orchid').innerText = `Soil: ${newState.soil}`;
-    console.log(newState.soil);
     if (newState.soil > 3) {
       document.getElementById('shading-orchid').innerText = `Creating shade: ${shading.shadeSize("little")}`;
     }
@@ -30,6 +27,7 @@ window.onload = function() {
 
   document.getElementById('water-orchid').onclick = function() {
     const newState = plant.stateControlOrchid(plant.hydrate);
+    newState.water = newState.water - 5 * counterDrought;
     document.getElementById('water-value-orchid').innerText = `Water: ${newState.water}`;
     if (newState.water > 4) {
       document.getElementById('blooming-orchid').innerText = `Blooming: ${blooming.color("purple")}`;
@@ -65,19 +63,23 @@ window.onload = function() {
 
   let counterWind = 0;
   document.getElementById('feed-aloe').onclick = function() {
-      let newState2 = plant.stateControlAloe(plant.feed);
+      const newState2 = plant.stateControlAloe(plant.feed);
       newState2.soil = newState2.soil - 5 * counterWind;
       plant.stateControlAloe().soil = newState2.soil;
       document.getElementById('soil-value-aloe').innerText = `Soil: ${newState2.soil}`
   };
 
+  let counterDrought = 0;
   document.getElementById('water-aloe').onclick = function() {
     const newState2 = plant.stateControlAloe(plant.hydrate);
+    newState2.water = newState2.water - 5 * counterDrought;
     document.getElementById('water-value-aloe').innerText = `Water: ${newState2.water}`;
   };
 
+  let counterFreeze = 0;
   document.getElementById('light-aloe').onclick = function() {
     const newState2 = plant.stateControlAloe(plant.light);
+    newState2.light = newState2.light - 5 * counterFreeze;
     document.getElementById('light-value-aloe').innerText = `Light: ${newState2.light}`;
     if (newState2.light > 3) {
       document.getElementById('healing-aloe').innerText = `Healing: ${healing.healingCapabilities("cuts")}`;
@@ -105,7 +107,41 @@ window.onload = function() {
       document.getElementById('shading-palm').innerText = `Creating shade: ${shadingPalm.shadeSize("medium")}`;
     }
     return counterWind;
-  }
+  };
+
+  document.getElementById('drought').onclick = function() {
+    let newState2 = plant.stateControlAloe();
+    let newState = plant.stateControlOrchid();
+    let newState1 = plant.stateControlPalm();
+    newState2.water = newState2.water - 5 - 5 * counterDrought;
+    newState.water = newState.water - 5 - 5 * counterDrought;
+    newState1.water = newState1.water - 5 - 5 * counterDrought;
+    counterDrought++;
+    document.getElementById('water-value-aloe').innerText = `Water: ${newState2.water}`;
+    document.getElementById('water-value-orchid').innerText = `Water: ${newState.water}`;
+    document.getElementById('water-value-palm').innerText = `Water: ${newState1.water}`;
+    if (newState.water < 4) {
+      document.getElementById('blooming-orchid').innerText = "";
+    }
+    return counterDrought;
+  };
+
+  document.getElementById('freeze').onclick = function() {
+    let newState2 = plant.stateControlAloe();
+    let newState = plant.stateControlOrchid();
+    let newState1 = plant.stateControlPalm();
+    newState2.light = newState2.light - 5 - 5 * counterFreeze;
+    newState.light = newState.light - 5 - 5 * counterFreeze;
+    newState1.light = newState1.light - 5 - 5 * counterFreeze;
+    counterFreeze++;
+    document.getElementById('light-value-aloe').innerText = `Light: ${newState2.light}`;
+    document.getElementById('light-value-orchid').innerText = `Light: ${newState.light}`;
+    document.getElementById('light-value-palm').innerText = `Light: ${newState1.light}`;
+    if (newState2.light < 3) {
+      document.getElementById('healing-aloe').innerText = "";
+    }
+    return counterFreeze;
+  };
   
   document.getElementById('show-state').onclick = function() {
     // We just need to call stateControl() without arguments 
