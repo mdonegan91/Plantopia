@@ -36,6 +36,7 @@ window.onload = function() {
 
   document.getElementById('light-orchid').onclick = function() {
     const newState = plant.stateControlOrchid(plant.light);
+    newState.light = newState.light - 5 * counterFreeze;
     document.getElementById('light-value-orchid').innerText = `Light: ${newState.light}`;
   };
 
@@ -53,11 +54,13 @@ window.onload = function() {
 
   document.getElementById('water-palm').onclick = function() {
     const newState1 = plant.stateControlPalm(plant.hydrate);
+    newState1.water = newState1.water - 5 * counterDrought;
     document.getElementById('water-value-palm').innerText = `Water: ${newState1.water}`;
   };
 
   document.getElementById('light-palm').onclick = function() {
     const newState1 = plant.stateControlPalm(plant.light);
+    newState1.light = newState1.light - 5 * counterFreeze;
     document.getElementById('light-value-palm').innerText = `Light: ${newState1.light}`;
   };
 
@@ -66,7 +69,7 @@ window.onload = function() {
       const newState2 = plant.stateControlAloe(plant.feed);
       newState2.soil = newState2.soil - 5 * counterWind;
       plant.stateControlAloe().soil = newState2.soil;
-      document.getElementById('soil-value-aloe').innerText = `Soil: ${newState2.soil}`
+      document.getElementById('soil-value-aloe').innerText = `Soil: ${newState2.soil}`;
   };
 
   let counterDrought = 0;
@@ -85,6 +88,8 @@ window.onload = function() {
       document.getElementById('healing-aloe').innerText = `Healing: ${healing.healingCapabilities("cuts")}`;
     }
   };
+
+  
 
   document.getElementById('wind').onclick = function() {
     let newState2 = plant.stateControlAloe();
