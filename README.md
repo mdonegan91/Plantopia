@@ -12,6 +12,8 @@
 - _Babel_
 - _JEST_
 
+![](plant.gif)
+
 ## 🌱 Setup/Installation Requirements 🌱
 
 * _Clone this repository to your desktop_
