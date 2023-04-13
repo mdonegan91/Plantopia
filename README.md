@@ -1,47 +1,33 @@
-# _JavaScript Template_
+# 🪷 Plantopia 🪷
 
-## EDIT BEFORE COMMITING
+#### By _Molly Donegan & Asia Kaplanyan_
 
-#### By _Ashe Urban & Vera Weikel_
+#### _A functional JavaScript web application where users become virtual gardener and take care of their own plants. Players are able to water, feed, and give their plants the right amount of sunlight to help them grow and thrive._
 
-#### _This project is serving as a template respository for future work_
-
-## Technologies Used
+## 🌱 Technologies Used 🌱
 
 - _JavaScript_
-- _HTML_
-- _CSS_
 - _Webpack_
-- _eslint_
-- _babel_
-- _jest_
+- _ESLint_
+- _Babel_
+- _JEST_
 
+## 🌱 Setup/Installation Requirements 🌱
 
-## Description
+* _Clone this repository to your desktop_
+* _Navigate to the top level of the directory_
+* _Install all Node packages and dependencies with the command ``npm install``_
+* _Build the project using webpack with ``npm run build``_
+* _Package and open the project in your browser using ``npm run start``_
+* _Lint JS files in the ``src`` folder with ``npm run lint``_
+* _Run tests with Jest using ``npm run test``_
 
-_This project template was built off of Epicodus' lessons on TDD and js environments_
+## 🌱 Known Bugs 🌱
 
-_As such, there are tests and js files for a triangle and rectangle constructor, these should be updated per project._
+* NA
 
-_Lesson prompt:_ https://www.learnhowtoprogram.com/intermediate-javascript/test-driven-development-and-environments-with-javascript/basic-project-structure
+## 🌱 License 🌱
 
-## Setup/Installation Requirements
+* [MIT](https://github.com/mdonegan91/Plantopia/blob/main/LICENSE)
 
-- _Clone or download to your local repository_
-- _Update titles in package.json and webpack.config.js to reflect new project title_
-- _Update README.md with correct project information_
-- _Ensure proper files are disallowed in .gitignore_
-- _git init a new local directory and create a new repository in github_
-- _run npm install_
-- _npm run start to build and launch server_
-- _proceed to update files to reflect new project_
-
-## Known Bugs
-
-- _None_
-
-## License
-
-_MIT_
-
-Copyright (c) _2023_ _Ashe Urban_ _Vera Weikel_
+Copyright (c) _2023_ _Molly Donegan & Asia Kaplanyan_
